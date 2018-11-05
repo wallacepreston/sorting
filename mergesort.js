@@ -5,10 +5,11 @@ function split (wholeArray){
   return [firstHalf,secondHalf];
 }
 
-console.log(split([3,4,5,6,9,8,6]));
 
 
-function merge (sortedArray1, sortedArray2){
+function merge (arr){
+  let sortedArray1 = arr[0];
+  let sortedArray2 = arr[1];
   let mergedArray=[];
   while (sortedArray1.length && sortedArray2.length){
     if (sortedArray1[0] < sortedArray2[0]){
@@ -28,4 +29,13 @@ function merge (sortedArray1, sortedArray2){
   return mergedArray;
 }
 
-merge([1,3,5,7],[2,4,6])
+function mergeSort(array) {
+  if (array.length === 1){
+    return array;
+  } else {
+      merge(split(array));
+  }
+ }
+ console.log(mergeSort([5,2]));
+ 
+ 
